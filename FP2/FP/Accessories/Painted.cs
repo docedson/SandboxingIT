@@ -8,7 +8,7 @@ namespace Accessories
 {
     public class Painted
     {
-        private static readonly float _ExPricePlated = 50.00f;
+        private static readonly float _ExPricePlated = 20.00f;
         public enum Paint { painted, plated, plain }
         public enum Colors { Black, Green, Brown, Blue, Yellow, Violet, Red, Gold}
         

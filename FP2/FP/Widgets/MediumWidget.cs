@@ -8,30 +8,30 @@ namespace Widgets
 {
     public class MediumWidget : Widget, IWidgets
     {
-        public MediumWidget() : base(250.00f)
+        public MediumWidget() : base(20.00f)
         {
             Console.WriteLine("This requires Medium Widgets for " + Price.ToString("C2")+" each");
         }
-        public override void SetupGears(bool isgadgetOrder)
+        public override void SetupGears(bool IsGadgetOrder)
         {
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("Medium Widget have: ");
                 Console.WriteLine("- 4 Gears");
             }
             Gears = 4;
         }
-        public override void SetupSprings(bool isgadgetOrder)
+        public override void SetupSprings(bool IsGadgetOrder)
         {
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("- 5 Springs.");
             }
             Springs = 5;
         }
-        public override void SetupLevers(bool isgadgetOrder)
+        public override void SetupLevers(bool IsGadgetOrder)
         {
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("- 3 Levers.");                
             }

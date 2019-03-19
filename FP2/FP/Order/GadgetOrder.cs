@@ -8,22 +8,22 @@ using Gadgets;
 
 namespace Order
 {
-    public class gadgetOrder : IOrder
+    public class GadgetOrder : IOrder
     {
         private ArrayList _Gadgets = new ArrayList();
         private int _iNumberOfSmallGadgets = 0;
         private int _iNumberOfMediumGadgets = 0;
         private int _iNumberOfLargeGadgets = 0;
 
-        private string _sColorDefaultGadget;
-        private string _sColorDefaultWidget;
-        //private string _sDefaultPower;
+        private string _sColorDefaultGadget1;
+        private string _sColorDefaultGadget2;
+        private string _sColorDefaultGadget3;       
 
-        public bool isgadgetOrder { get; set; }
+        public bool IsGadgetOrder { get; set; }
 
-        public gadgetOrder(bool bgadgetOrder)
+        public GadgetOrder(bool bGadgetOrder)
         {
-            isgadgetOrder = bgadgetOrder;
+            IsGadgetOrder = bGadgetOrder;
         }
 
         public void Build()
@@ -39,23 +39,50 @@ namespace Order
                 _iNumberOfSmallGadgets = int.Parse(sResponse);
                 if (_iNumberOfSmallGadgets > 0)
                 {
-                    Console.WriteLine("How would like your Gadgets decorated?: (1) Painted, (2) Chrome Plated, (3) Plain: ");
+                    Console.Write("Choose an option for the Gadget to be decorated: (1) Painted, (2) Chrome Plated, (3) Plain: ");
                     int sPainted = Convert.ToInt32(Console.ReadLine());
 
-                    if (sPainted == 1)
+                    switch (sPainted)
                     {
-                        Console.WriteLine("Your Gadgets will be painted.");
-                        Console.Write("What color would you like them: (1) Black, (2) Green, (3) Brown, (4) Blue, (5) Yellow, (6) Violet, (7) Red, (8) Gold?: ");
-                        _sColorDefaultGadget = Console.ReadLine();
-                        Console.WriteLine(" ");
-                    }
-                    else if (sPainted == 2)
-                    {
-                        Console.WriteLine("Your Gadgets will be plated");
-                    }
-                    else if (sPainted == 3)
-                    {
-                        Console.WriteLine("Your Gadgets will be plain.");
+                        case 1:
+
+                            Console.Write("What color would you like: (1) Black, (2) Green, (3) Brown, (4) Blue, (5) Yellow, (6) Violet, (7) Red, (8) Gold?: ");
+                            int sColor = Convert.ToInt32(Console.ReadLine());
+
+                            switch (sColor)
+                            {
+                                case 1:
+                                    _sColorDefaultGadget1 = "painted Black";
+                                    break;
+                                case 2:
+                                    _sColorDefaultGadget1 = "painted Green";
+                                    break;
+                                case 3:
+                                    _sColorDefaultGadget1 = "painted Brown";
+                                    break;
+                                case 4:
+                                    _sColorDefaultGadget1 = "painted Blue";
+                                    break;
+                                case 5:
+                                    _sColorDefaultGadget1 = "painted Yellow";
+                                    break;
+                                case 6:
+                                    _sColorDefaultGadget1 = "painted Violet";
+                                    break;
+                                case 7:
+                                    _sColorDefaultGadget1 = "painted Red";
+                                    break;
+                                case 8:
+                                    _sColorDefaultGadget1 = "painted Gold";
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            _sColorDefaultGadget1 = "Chrome Plated";
+                            break;
+                        case 3:
+                            _sColorDefaultGadget1 = "Not Decorated";
+                            break;
                     }
 
                     Console.WriteLine("A Small Gadget is powered by the included Battery.");
@@ -68,22 +95,50 @@ namespace Order
                 _iNumberOfMediumGadgets = int.Parse(sResponse2);
                 if (_iNumberOfMediumGadgets > 0)
                 {
-                    Console.WriteLine("How would like your Gadgets decorated?: (1) Painted, (2) Chrome Plated, (3) Plain: ");
+                    Console.Write("Choose an option for the Gadget to be decorated: (1) Painted, (2) Chrome Plated, (3) Plain: ");
                     int sPainted = Convert.ToInt32(Console.ReadLine());
 
-                    if (sPainted == 1)
+                    switch (sPainted)
                     {
-                        Console.Write("What color would you like them: (1) Black, (2) Green, (3) Brown, (4) Blue, (5) Yellow, (6) Violet, (7) Red, (8) Gold?: ");
-                        _sColorDefaultGadget = Console.ReadLine();
-                        Console.WriteLine(" ");
-                    }
-                    else if (sPainted == 2)
-                    {
-                        Console.WriteLine("Your Gadgets will be plated.");
-                    }
-                    else if (sPainted == 3)
-                    {
-                        Console.WriteLine("Your Gadgets will be plain.");
+                        case 1:
+
+                            Console.Write("What color would you like: (1) Black, (2) Green, (3) Brown, (4) Blue, (5) Yellow, (6) Violet, (7) Red, (8) Gold?: ");
+                            int sColor = Convert.ToInt32(Console.ReadLine());
+
+                            switch (sColor)
+                            {
+                                case 1:
+                                    _sColorDefaultGadget2 = "painted Black";
+                                    break;
+                                case 2:
+                                    _sColorDefaultGadget2 = "painted Green";
+                                    break;
+                                case 3:
+                                    _sColorDefaultGadget2 = "painted Brown";
+                                    break;
+                                case 4:
+                                    _sColorDefaultGadget2 = "painted Blue";
+                                    break;
+                                case 5:
+                                    _sColorDefaultGadget2 = "painted Yellow";
+                                    break;
+                                case 6:
+                                    _sColorDefaultGadget2 = "painted Violet";
+                                    break;
+                                case 7:
+                                    _sColorDefaultGadget2 = "painted Red";
+                                    break;
+                                case 8:
+                                    _sColorDefaultGadget2 = "painted Gold";
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            _sColorDefaultGadget2 = "Chrome Plated";
+                            break;
+                        case 3:
+                            _sColorDefaultGadget2 = "Not Decorated";
+                            break;
                     }
 
                     Console.WriteLine("A Medium Gadget is powered by the included Solar Battery.");
@@ -96,22 +151,50 @@ namespace Order
                 _iNumberOfLargeGadgets = int.Parse(sResponse3);
                 if (_iNumberOfLargeGadgets > 0)
                 {
-                    Console.WriteLine("How would like your Gadgets decorated?: (1) Painted, (2) Chrome Plated, (3) Plain: ");
+                    Console.Write("Choose an option for the Gadget to be decorated: (1) Painted, (2) Chrome Plated, (3) Plain: ");
                     int sPainted = Convert.ToInt32(Console.ReadLine());
 
-                    if (sPainted == 1)
+                    switch (sPainted)
                     {
-                        Console.Write("What color would you like them: (1) Black, (2) Green, (3) Brown, (4) Blue, (5) Yellow, (6) Violet, (7) Red, (8) Gold?: ");
-                        _sColorDefaultGadget = Console.ReadLine();
-                        Console.WriteLine(" ");
-                    }
-                    else if (sPainted == 2)
-                    {
-                        Console.WriteLine("Your Gadgets will be plated.");
-                    }
-                    else if (sPainted == 3)
-                    {
-                        Console.WriteLine("Your Gadgets will be plain.");
+                        case 1:
+
+                            Console.Write("What color would you like: (1) Black, (2) Green, (3) Brown, (4) Blue, (5) Yellow, (6) Violet, (7) Red, (8) Gold?: ");
+                            int sColor = Convert.ToInt32(Console.ReadLine());
+
+                            switch (sColor)
+                            {
+                                case 1:
+                                    _sColorDefaultGadget3 = "painted Black";
+                                    break;
+                                case 2:
+                                    _sColorDefaultGadget3 = "painted Green";
+                                    break;
+                                case 3:
+                                    _sColorDefaultGadget3 = "painted Brown";
+                                    break;
+                                case 4:
+                                    _sColorDefaultGadget3 = "painted Blue";
+                                    break;
+                                case 5:
+                                    _sColorDefaultGadget3 = "painted Yellow";
+                                    break;
+                                case 6:
+                                    _sColorDefaultGadget3 = "painted Violet";
+                                    break;
+                                case 7:
+                                    _sColorDefaultGadget3 = "painted Red";
+                                    break;
+                                case 8:
+                                    _sColorDefaultGadget3 = "painted Gold";
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            _sColorDefaultGadget3 = "Chrome Plated";
+                            break;
+                        case 3:
+                            _sColorDefaultGadget3 = "Not Decorated";
+                            break;
                     }
 
                     Console.WriteLine("A Large Gadget is powered by the included Generator.");
@@ -164,9 +247,10 @@ namespace Order
 
         private void SetupGadget(Gadget gadget)
         {
-            gadget.isgadgetOrder = true;
-            gadget.SetupPaintedDefault(_sColorDefaultGadget);
-            gadget.sDefaultWidgetColor = _sColorDefaultWidget;
+            gadget.IsGadgetOrder = true;
+            gadget.SetupPaintedDefault(_sColorDefaultGadget1);
+            gadget.SetupPaintedDefault(_sColorDefaultGadget2);
+            gadget.SetupPaintedDefault(_sColorDefaultGadget3);
             gadget.SetupWidgets();
             gadget.SetupSwitches();
             gadget.SetupButtons();
@@ -212,13 +296,12 @@ namespace Order
 
             Console.WriteLine("-------Order Summary-------");
 
-            Console.WriteLine("Total Gadgets  : {0, 5} {1, 5}", (_iNumberOfSmallGadgets + _iNumberOfMediumGadgets + _iNumberOfLargeGadgets).ToString(), " that are painted " + _sColorDefaultGadget);
-
+            Console.WriteLine("Total Gadgets  : {0, 5} {1, 5}", (_iNumberOfSmallGadgets + _iNumberOfMediumGadgets + _iNumberOfLargeGadgets).ToString(), " that are " + _sColorDefaultGadget1 + ", " + _sColorDefaultGadget2 +", and " +_sColorDefaultGadget3);
             Console.WriteLine("Total Butttons : {0, 5}", iTotalButtons.ToString());
             Console.WriteLine("Total Lights   : {0, 5}", iTotalLights.ToString());
             Console.WriteLine("Total Switches : {0, 5}", iTotalSwitches.ToString());
 
-            Console.WriteLine("Total Widgets  : {0, 5} {1, 5}", iTotalWidgets.ToString(), " that are painted " + _sColorDefaultWidget);
+            Console.WriteLine("Total Widgets  : {0, 5}", iTotalWidgets.ToString());
             Console.WriteLine("Total Gears    : {0, 5}", iTotalWidGears.ToString());
             Console.WriteLine("Total Springs  : {0, 5}", iTotalWidSprings.ToString());
             Console.WriteLine("Total Levers   : {0, 5}", iTotalWidLevers.ToString());

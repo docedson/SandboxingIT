@@ -8,7 +8,7 @@ namespace Order
 {
     public interface IOrder
     {
-        bool isgadgetOrder { set; get; }
+        bool IsGadgetOrder { set; get; }
         void Build();
     }
 }

@@ -21,13 +21,13 @@ namespace WagCorp
 
             if (orderType == 1)
             {
-                OrderFactory gadgetOrder = new GadgetOrderFactory();
-                gadgetOrder.Build();
+                OrderFactory GadgetOrder = new GadgetOrderFactory();
+                GadgetOrder.Build();
             }
             else if (orderType == 2)
             {
-                OrderFactory widgetOrder = new WidgetOrderFactory();
-                widgetOrder.Build();
+                OrderFactory WidgetOrder = new WidgetOrderFactory();
+                WidgetOrder.Build();
             }
             else
             {

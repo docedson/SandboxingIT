@@ -9,7 +9,7 @@ namespace Accessories
     {
         public Buttons()
         {
-            Price = 20.0f;
+            Price = 5.0f;
         }
     }
 }

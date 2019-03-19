@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Order
 {
-    public class widgetOrder : IOrder
+    public class WidgetOrder : IOrder
     {
-        public bool isgadgetOrder { get; set; }
+        public bool IsGadgetOrder { get; set; }
 
-        public widgetOrder(bool bgadgetOrder)
+        public WidgetOrder(bool bGadgetOrder)
         {
-            isgadgetOrder = bgadgetOrder;
+            IsGadgetOrder = bGadgetOrder;
         }
         public void Build()
         {
@@ -89,8 +89,7 @@ namespace Order
                 Console.WriteLine("Which includes the following items: ");
                 Console.WriteLine("- " + ((Gadget)g).Buttons + " Buttons.");
                 Console.WriteLine("- " + ((Gadget)g).Lights + " Lights.");
-                Console.WriteLine("- " + ((Gadget)g).Switches + " Switches.");
-                //Console.WriteLine("- " + ((Gadget)g).GetPower() + " for " + ((Gadget)g).GetGadgetPowerPrice());
+                Console.WriteLine("- " + ((Gadget)g).Switches + " Switches.");                
                 ((Gadget)g).GetPainted();
 
                 ((Gadget)g).GetWidgetOrderSummary();

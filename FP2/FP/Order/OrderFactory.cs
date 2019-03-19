@@ -8,7 +8,7 @@ namespace Order
 {
     public abstract class OrderFactory : IOrder
     {
-        public bool isgadgetOrder { get; set; }
+        public bool IsGadgetOrder { get; set; }
 
         public enum OrderMethod
         {

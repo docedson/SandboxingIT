@@ -59,15 +59,15 @@ namespace Widgets
                 _iLevers = value;
             }
         }
-        public virtual void SetupLevers(bool isgadgetOrder)
+        public virtual void SetupLevers(bool IsGadgetOrder)
         {
 
         }
-        public virtual void SetupGears(bool isgadgetOrder)
+        public virtual void SetupGears(bool IsGadgetOrder)
         {
 
         }
-        public virtual void SetupSprings(bool isgadgetOrder)
+        public virtual void SetupSprings(bool IsGadgetOrder)
         {
 
         }

@@ -10,8 +10,8 @@ namespace Order
     {
         public override void Build()
         {
-            gadgetOrder ro = new gadgetOrder(isgadgetOrder);
-            ro.Build();
+            GadgetOrder go = new GadgetOrder(IsGadgetOrder);
+            go.Build();
         }
     }
 }

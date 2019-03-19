@@ -9,7 +9,7 @@ namespace Accessories
     {
         public Lights()
         {
-            Price = 35.0f;
+            Price = 10.0f;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Accessories
     {
         public Switch()
         {
-            Price = 25.0f;
+            Price = 15.0f;
         }
     }
 }

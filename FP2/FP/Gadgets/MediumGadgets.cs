@@ -9,7 +9,7 @@ namespace Gadgets
 {
     public class MediumGadgets : Gadget, IGadget
     {
-        public MediumGadgets() : base(75.00f)//, Powered.Power.solar)
+        public MediumGadgets() : base(75.00f)
         {
             _defaultSwitches = 1;
             _defaultButtons = 2;
@@ -20,7 +20,7 @@ namespace Gadgets
 
         public override void SetupWidgets()
         {
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("One Medium Gadget includes 2 Small Widgets, 2 Medium Widgets and 1 Large Widget standard.");
             }
@@ -33,10 +33,10 @@ namespace Gadgets
         public override void SetupLights()
         {
             String sLights;
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("There are " + _defaultLights.ToString() + " Lights available for a Medium Gadget at " + LightPrice + " each.");
-                Console.Write("However, additional Lights may be added to your order. " /*+ LightPrice*/ + "How many more would you like to add to your order?: ");
+                Console.Write("However, additional Lights may be added to your order. " + "How many more would you like to add to your order?: ");
                 sLights = Console.ReadLine();
                 Lights = int.Parse(sLights) + _defaultLights;
             }
@@ -50,10 +50,10 @@ namespace Gadgets
         {
             String sSwitches;
 
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("There are " + _defaultSwitches.ToString() + " Switches available for a Medium Gadget at " + SwitchPrice + " each.");
-                Console.Write("However, additional Switches may be added to your order. " /*+ SwitchPrice + " each.*/ + "How many more would you like to add to your order?: ");
+                Console.Write("However, additional Switches may be added to your order. " + "How many more would you like to add to your order?: ");
                 sSwitches = Console.ReadLine();
                 Switches = int.Parse(sSwitches) + _defaultSwitches;
             }
@@ -67,10 +67,10 @@ namespace Gadgets
         {
             String sButtons;
 
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("There are " + _defaultButtons.ToString() + " Buttons available for a Medium Gadget. for " + ButtonPrice + " each.");
-                Console.Write("However, additional Buttons may be added to your order. " /*+ ButtonPrice*/ + "How many more would you like to add to your order?: ");
+                Console.Write("However, additional Buttons may be added to your order. " + "How many more would you like to add to your order?: ");
                 sButtons = Console.ReadLine();
                 Buttons = int.Parse(sButtons) + _defaultButtons;
             }

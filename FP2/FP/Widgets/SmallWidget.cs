@@ -8,30 +8,30 @@ namespace Widgets
 {
     public class SmallWidget : Widget, IWidgets
     {
-        public SmallWidget() : base(100.00f)
+        public SmallWidget() : base(15.00f)
         {
             Console.WriteLine("This requires Small Widgets for " + Price.ToString("C2") +" each");
         }
-        public override void SetupGears(bool isgadgetOrder)
+        public override void SetupGears(bool IsGadgetOrder)
         {
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("Small Widgets have: ");
                 Console.WriteLine("- 2 Gears");
             }
             Gears = 2;
         }
-        public override void SetupSprings(bool isgadgetOrder)
+        public override void SetupSprings(bool IsGadgetOrder)
         {
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("- 3 Springs.");                
             }
             Springs = 3;
         }
-        public override void SetupLevers(bool isgadgetOrder)
+        public override void SetupLevers(bool IsGadgetOrder)
         {
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("- 1 Lever.");                
             }

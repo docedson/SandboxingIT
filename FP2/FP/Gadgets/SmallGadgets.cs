@@ -9,18 +9,17 @@ namespace Gadgets
 {
     public class SmallGadgets : Gadget, IGadget
     {
-        public SmallGadgets() : base(50.00f)//, Powered.Power.battery)
+        public SmallGadgets() : base(50.00f)
         {
             _defaultSwitches = 1;
-            _defaultButtons = 2;
-            //_defaultLights = 0;
+            _defaultButtons = 2;            
 
             Console.WriteLine("The selected Small Gadget is " + Price.ToString("C2") +" each");
         }
 
         public override void SetupWidgets()
         {
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("A Small Gadget includes 1 Small Widget and 1 Medium Widget standard.");
             }
@@ -31,7 +30,7 @@ namespace Gadgets
 
         public override void SetupLights()
         {
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("No Lights are available for a Small Gadget");
             }
@@ -40,7 +39,7 @@ namespace Gadgets
 
         public override void SetupSwitches()
         {
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("There are " + _defaultSwitches.ToString() + " Switches available for a Small Gadget at " + SwitchPrice + " each.");
             }
@@ -51,10 +50,10 @@ namespace Gadgets
         {
             String sButtons;
 
-            if (!isgadgetOrder)
+            if (!IsGadgetOrder)
             {
                 Console.WriteLine("There are " + _defaultButtons.ToString() + " Buttons available for a Small Gadget at " + ButtonPrice + " each.");
-                Console.Write("However, additional Buttons may be added to your order. " /*+ ButtonPrice */+ "How many more would you like to add to your order?: ");
+                Console.Write("However, additional Buttons may be added to your order. " + "How many more would you like to add to your order?: ");
                 sButtons = Console.ReadLine();
                 Buttons = int.Parse(sButtons) + _defaultButtons;
             }

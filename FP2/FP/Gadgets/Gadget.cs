@@ -16,33 +16,26 @@ namespace Gadgets
         private Lights _Lights;
         private float _Price;
         private Painted _painted;
-        //private Powered _power;
-        //private static Powered _powerStatic = new Powered();
-
 
         private int _iTotalGears = 0;
         private int _iTotalSprings = 0;
         private int _iTotalLevers = 0;
         private float _fTotalWidgetPrice = 0.0f;
 
-        private bool _isgadgetOrder = false;
+        private bool _IsGadgetOrder = false;
         private string _sDefaultWidgetColor;
 
         protected int _defaultButtons;
         protected int _defaultSwitches;
         protected int _defaultLights;
-        //protected Powered _defaultPower;
 
-
-        public Gadget(float price)//, Powered.Power power)
+        public Gadget(float price)
         {
             _Price = price;
             _Switches = new Switch();
             _Buttons = new Buttons();
             _Lights = new Lights();
             _painted = new Painted();
-            //_power = new Powered();
-            //_power.DefaultPower = power;
         }
 
         public float Price
@@ -62,15 +55,15 @@ namespace Gadgets
             }
         }
 
-        public bool isgadgetOrder
+        public bool IsGadgetOrder
         {
             get
             {
-                return _isgadgetOrder;
+                return _IsGadgetOrder;
             }
             set
             {
-                _isgadgetOrder = value;
+                _IsGadgetOrder = value;
             }
         }
         public string sDefaultWidgetColor
@@ -129,24 +122,6 @@ namespace Gadgets
             }
         }
 
-        /*protected void SetPower(Powered.Power gPower)
-        {
-            _power.power = gPower;
-        }
-
-        public string GetPower()
-        {
-            switch (_power.power)
-            {
-                case Powered.Power.solar:
-                    return "Solar";
-                case Powered.Power.battery:
-                    return "Battery";
-                default:
-                    return "Generator";
-            }
-        }*/
-
         public void AddSmallWidgets(int iNum)
         {
             for (int ii = 0; ii < iNum; ii++)
@@ -177,10 +152,10 @@ namespace Gadgets
         private void AddWidget(IWidgets iw)
         {
             _Widgets.Add(iw);
-            iw.SetupGears(_isgadgetOrder);
-            iw.SetupLevers(_isgadgetOrder);
-            iw.SetupSprings(_isgadgetOrder);
-            if (!_isgadgetOrder)
+            iw.SetupGears(_IsGadgetOrder);
+            iw.SetupLevers(_IsGadgetOrder);
+            iw.SetupSprings(_IsGadgetOrder);
+            if (!_IsGadgetOrder)
             {
                 ((Widget)iw).SetupPainted();
             }
@@ -211,16 +186,6 @@ namespace Gadgets
         {
 
         }
-
-        /*public string GetGadgetPowerPrice()
-        {
-            return _power.GetTotalPrice();
-        }
-
-        protected static float GetGadgetPowerPrice(int option)
-        {
-            return _powerStatic.PowerPrice[option];
-        }*/
 
         public void SetupPaintedDefault(string sColor)
         { 
@@ -366,8 +331,8 @@ namespace Gadgets
 
         public float GetGadgetOrderTotalPrice()
         {
-            float fTotalWGadgetPrice = Price /*+ _power.GetTotalPriceMoney()*/ + _painted.GetTotalPrice();
-            if (!_isgadgetOrder)
+            float fTotalWGadgetPrice = Price + _painted.GetTotalPrice();
+            if (!_IsGadgetOrder)
             {
                 Console.WriteLine("Subtotal Gadget Price       : \t{0,20}", fTotalWGadgetPrice.ToString("C2"));
             }
